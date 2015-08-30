@@ -365,8 +365,8 @@ static bool QualifyDevice(uint8_t *buf)
     USBH_SetConfigurationB(&device, device.confDesc.bConfigurationValue);
 
     /* Assign Host Channels to the endpoints */
-    USBH_AssignHostChannel(BULK_OUT, epOut);
-    USBH_AssignHostChannel(BULK_IN, epIn);
+    USBH_AssignHostChannel(BULK_OUT, epOutIndex);
+    USBH_AssignHostChannel(BULK_IN, epInIndex);
 
     USB_PRINTF("\n\nDevice VID/PID is 0x%04X/0x%04X, device bus speed is %s",
                device.devDesc.idVendor, device.devDesc.idProduct,
